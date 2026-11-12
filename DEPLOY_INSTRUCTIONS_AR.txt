@@ -1,0 +1,16 @@
+PMIS v0.15.8 - Netlify Deploy Package
+
+طريقة النشر:
+1) فك ضغط PMIS_v0.15.8_NETLIFY_DEPLOY.zip.
+2) الأفضل: ارفع محتويات المجلد إلى GitHub repository ثم دع Netlify يبني المشروع.
+3) يجب أن يكون netlify.toml و package.json في جذر المشروع.
+4) Environment variables المطلوبة في نفس Netlify project:
+   SUPABASE_DATABASE_URL
+   SUPABASE_SERVICE_ROLE_KEY
+   SUPABASE_JWT_SECRET
+5) نفذ Deploy without cache.
+6) اختبر /api/health.
+7) النتيجة المطلوبة: status=ok, databaseConfigured=true, tokenSecretConfigured=true, databaseConnected=true.
+
+مهم: لا تضع قيم الأسرار داخل ملفات المشروع.
+مهم: هذه حزمة إصلاح ونشر للتحقق من Netlify API/Health/Login/Database connectivity. لا تستخدم Master Baseline على قاعدة Supabase الحالية.
